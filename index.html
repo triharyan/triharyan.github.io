@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembar Tes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .left button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .left button:hover {
+            background-color: #0056b3;
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdUxVRlFz6C01hVw7HLlhThjBHIU_6Q2FfCJDQvFnkdvlGN1g/viewform?usp=sf_link')">Tes 1</button>
+            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSevjoCD4EkUlmJSik38VlnaYL0L_WbibAvNoWh8f3EXQed3xQ/viewform?usp=sf_link')">Tes 2</button>
+            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSebQhJAug0y-jx_B2mV0IFo5U226wiwAYAiaRYz_DI-UPlOQw/viewform?usp=sf_link')">Tes 3</button>
+            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdQzgMLZJfvoLxx0_ET3qkWa9VW801bwxSahVLyvZr7bW4FWA/viewform?usp=sf_link')">Tes 4</button>
+        </div>
+        <div class="right">
+            <!-- Gambar diambil dari URL -->
+            <img src="https://www.arisamandiri.com/assets/img/assets/bgAbout.jpg" alt="Logo" class="logo">
+        </div>
+    </div>
+
+    <script>
+        function openInNewTab(url) {
+            window.open(url, '_blank').focus();
+        }
+    </script>
+</body>
+</html>
