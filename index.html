@@ -3,121 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lembar Jawab Tes</title>
+    <title>Portal Seleksi</title>
     <style>
-        * {
+        /* Atur body dengan margin nol dan tinggi penuh layar */
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            height: 100%;
+            font-family: Arial, sans-serif;
         }
 
-        body {
-            font-family: Arial, sans-serif;
+        /* Atur gambar latar belakang */
+        .background {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://www.arisamandiri.com/assets/img/assets/bgAbout.jpg'); /* Ganti URL ini dengan gambar Anda */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Layer gradasi hitam transparan di atas gambar */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Gradasi transparan hitam */
+            z-index: 1;
+        }
+
+        /* Headline di bagian atas */
+        .headline {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            z-index: 2;
+        }
+
+        /* Container untuk tombol */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+            width: 70%;
+            flex-wrap: wrap;
+        }
+
+        /* Tombol dengan logo */
+        .button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+            width: 30%;
+            height: auto;
+        }
+
+        .button:hover {
             background-color: #f0f0f0;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 20px;
-
-            padding: 0px;
-            background-color: #ffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            gap: 50px;
-        }
-
-        .header {
-            grid-column: 1 / 3;
-            text-align: center;
-            font-size: 24px;
-            background-color: #ffff;
-            padding: 30px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .left {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-		margin-bottom: 20px
-            background-color: #fff;
-            align-items: center; /* Supaya tombol ada di tengah */
-            justify-content: center; /* Menengahkan tombol secara horizontal */
-            height: 100%; /* Memastikan tinggi cukup */
-        }
-
-        .left button {
-            width: 70%; /* Mengatur tombol menjadi 70% dari container */
-            padding: 15px 0;
-            border: none;
-            background-color: #006bff;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .left button:hover {
-            background-color: #0056b3;
-        }
-
-        .right img {
-            width: calc(100% + 40%); /* Lebar gambar lebih besar 20% dari area container */
+        /* Atur logo dalam tombol */
+        .button img {
+            width: 75%;
             height: auto;
-            max-width: none; /* Pastikan gambar tidak dibatasi lebar default */
-            border-radius: 5px;
-            margin-top: 10%; /* Agar gambar tetap sejajar di tengah */
-            margin-left: -40%; /* Agar gambar tetap sejajar di tengah */
-            margin-bottom: 10%; /* Agar gambar tetap sejajar di tengah */
-
         }
 
-        /* Media Query untuk layar ponsel */
+        /* Deskripsi di bawah tombol */
+        .button p {
+            margin-top: 10px;
+            font-size: 1rem;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Responsif untuk layar kecil (HP) */
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+            .content {
+                flex-direction: column;
+                width: 80%;
             }
 
-            .left button {
-                width: 100%; /* Pada ponsel, tombol kembali ke lebar 100% */
+            .button {
+                width: 100%;
             }
 
-            .right img {
-                width: 100%; /* Pada ponsel, gambar kembali normal */
-                margin-left: 0;
+            .headline {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            Lembar Jawab Tes Arisamandiri 4.0.
-    <div class="container">
-        <div class="right">
-            <!-- Gambar diambil dari URL -->
-            <img src="https://www.arisamandiri.com/assets/img/assets/bgAbout.jpg" alt="Logo" class="logo">
-        </div>
+    <!-- Div untuk background gambar -->
+    <div class="background">
+        <!-- Overlay gradasi hitam transparan -->
+        <div class="overlay"></div>
 
-        <div class="left">
-            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdUxVRlFz6C01hVw7HLlhThjBHIU_6Q2FfCJDQvFnkdvlGN1g/viewform?usp=sf_link')">Tes 1</button>
-            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSevjoCD4EkUlmJSik38VlnaYL0L_WbibAvNoWh8f3EXQed3xQ/viewform?usp=sf_link')">Tes 2</button>
-            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSebQhJAug0y-jx_B2mV0IFo5U226wiwAYAiaRYz_DI-UPlOQw/viewform?usp=sf_link')">Tes 3</button>
-            <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSdQzgMLZJfvoLxx0_ET3qkWa9VW801bwxSahVLyvZr7bW4FWA/viewform?usp=sf_link')">Tes 4</button>
+        <!-- Headline di bagian atas -->
+        <h1 class="headline">Portal Seleksi</h1>
+
+        <!-- Tombol berlogo di depan background -->
+        <div class="content">
+            <!-- Tombol 1: Persyaratan Berkas -->
+            <button class="button">
+                <img src="https://www.arisamandiri.com/assets/img/assets/logoAM.png" alt="Logo A">
+                <h2>Persyaratan Berkas</h2>
+            </button>
+
+            <!-- Tombol 2: Pelaksanaan Tes -->
+            <button class="button">
+                <img src="https://www.arisamandiri.com/assets/img/assets/logoAM.png" alt="Logo B">
+                <h2>Pelaksanaan Tes</h2>
+            </button>
+
+            <!-- Tombol 3: Absensi Masuk Kerja -->
+            <button class="button">
+                <img src="https://www.arisamandiri.com/assets/img/assets/logoAM.png" alt="Logo C">
+                <h2>Absensi Masuk Kerja</h2>
+            </button>
         </div>
     </div>
-
-    <script>
-        function openInNewTab(url) {
-            window.open(url, '_blank').focus();
-        }
-    </script>
 </body>
 </html>
